@@ -1,18 +1,15 @@
-import { resolve } from 'path'
+import path from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  root: path.resolve(__dirname, './'),
   build: {
+    outDir: path.resolve(__dirname, './dist'),
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        nested: resolve(__dirname, 'modules.html'),
-      },
-    },
-  },
-  // config options
-  root: './', // input directory
-  build: {
-    outDir: './dist' // output directory
+        index: path.resolve(__dirname, './index.html'),
+        about: path.resolve(__dirname, './modules.html')
+      }
+    }
   }
 }) 
