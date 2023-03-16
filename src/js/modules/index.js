@@ -1,1 +1,1 @@
-export { Slider } from './slider.js'
+export { Slider } from './slider'
