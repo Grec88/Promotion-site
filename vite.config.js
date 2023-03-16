@@ -10,4 +10,9 @@ export default defineConfig({
       },
     },
   },
+  // config options
+  root: './', // input directory
+  build: {
+    outDir: './dist' // output directory
+  }
 }) 
