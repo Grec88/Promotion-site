@@ -1,4 +1,4 @@
-import { Slider } from "./modules";
+import { Slider, VideoPlayer } from "./modules";
 
 window.addEventListener('DOMContentLoaded', () => {
     const slider = new Slider('.page', ".next", ".sidecontrol > a");
