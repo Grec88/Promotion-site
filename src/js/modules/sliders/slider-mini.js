@@ -1,8 +1,8 @@
 import { Slider } from './slider'
 
 export class MiniSlider extends Slider {
-    constructor(container, next, prev, activeClass, animate, autoplay) {
-        super(container, next, prev, activeClass, animate, autoplay);
+    constructor(obj) {
+        super(obj);
     }
 
     decorateSlides() {
