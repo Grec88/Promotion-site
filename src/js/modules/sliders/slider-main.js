@@ -1,10 +1,8 @@
-export class Slider {
-    constructor(page, buttons, logoButtons) {
-        this.page = document.querySelector(page);
-        this.slides = Array.from(this.page.children);
-        this.buttons = document.querySelectorAll(buttons);
-        this.logoButtons = document.querySelectorAll(logoButtons);
-        this.slideIndex = 1;
+import { Slider } from "./slider";
+
+export class MainSlider extends Slider {
+    constructor(buttons, logoButtons){
+        super(buttons, logoButtons);
     }
 
     showSlides(n) {
@@ -16,7 +14,7 @@ export class Slider {
             this.slideIndex = this.slides.length;
         }
 
-        this.slides.forEach(slide => {
+        Array.from(this.slides).forEach(slide => {
             slide.style.display = "none";
         });
 
