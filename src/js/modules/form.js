@@ -36,8 +36,6 @@ export class Form {
 
     clearInputs() {
         this.inputs.forEach(input => {
-            const value = input.value;
-            console.log({ value });
             input.value = "";
         })
     }
