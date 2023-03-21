@@ -4,17 +4,11 @@ export class Form {
         this.inputs = document.querySelectorAll('input');
         this.phoneInputs = document.querySelectorAll('input[name="phone"]');
         this.emailInputs = document.querySelectorAll('input[type="email"]');
-        this.dateInput = document.querySelector('input[name="date"]');
         this.message = {
             loading: 'Загрузка',
             success: 'Спасибо! Мы скоро свяжимся с вами.',
             failure: 'Что-то пошло не так...'
         };
-    }
-    changeDateInput(){
-        this.dateInput.addEventListener('click', (e) => {
-            e.target.placeholder = "";
-        })
     }
 
     checkInputs(inputs, reg) {
@@ -66,10 +60,9 @@ export class Form {
             })
         })
     }
-    init(){
+    init() {
         this.formPost();
         this.checkInputs(this.emailInputs, /[^a-z 0-9 @ .]/ig);
         this.checkInputs(this.phoneInputs, /\D/);
-        this.changeDateInput();
     }
 };

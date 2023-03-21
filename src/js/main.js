@@ -4,6 +4,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const slider = new MainSlider({ container: '.page', buttons: ".next", logoButtons: ".sidecontrol > a" });
     slider.render();
 
+    const modulesSlide = new MainSlider({
+        container:'.moduleapp',
+        buttons: '.next',
+        prev: '.prevmodule'
+    });
+    modulesSlide.render();
+
     const player = new VideoPlayer('.showup .play', '.overlay');
     player.init();
 

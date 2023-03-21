@@ -20,7 +20,7 @@ export class MiniSlider extends Slider {
         }
     }
 
-    nextSlide(){
+    nextSlide() {
         this.container.appendChild(this.slides[0]);
         this.decorateSlides();
     }
@@ -36,17 +36,19 @@ export class MiniSlider extends Slider {
     }
 
     init() {
-        this.container.style.cssText = `
+        if (this.container) {
+            this.container.style.cssText = `
         display: flex;
         flex-wrap: wrap;
         overflow: hidden;
         align-items: flex-start;
         `;
-        this.bindTriggers();
-        this.decorateSlides();
+            this.bindTriggers();
+            this.decorateSlides();
 
-        if(this.autoplay){
-            setInterval(() => this.nextSlide(), 5000);
+            if (this.autoplay) {
+                setInterval(() => this.nextSlide(), 5000);
+            }
         }
     }
 }
