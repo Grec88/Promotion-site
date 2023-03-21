@@ -36,7 +36,7 @@ export class Form {
 
     clearInputs() {
         this.inputs.forEach(input => {
-            let value = input.value;
+            const value = input.value;
             console.log({ value });
             input.value = "";
         })
@@ -56,7 +56,6 @@ export class Form {
 
                 this.postData(url, formData)
                     .then(res => {
-                        console.log({ res });
                         statusMessage.textContent = this.message.success;
                     })
                     .catch(() => statusMessage.textContent = this.message.failure)
