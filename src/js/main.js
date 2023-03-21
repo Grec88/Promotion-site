@@ -1,4 +1,4 @@
-import { MainSlider, MiniSlider, VideoPlayer, Difference } from "./modules";
+import { MainSlider, MiniSlider, VideoPlayer, Difference, Form, Mask } from "./modules";
 
 window.addEventListener('DOMContentLoaded', () => {
     const slider = new MainSlider({ container: '.page', buttons: ".next", logoButtons: ".sidecontrol > a" });
@@ -35,4 +35,8 @@ window.addEventListener('DOMContentLoaded', () => {
     feedSlider.init();
 
     new Difference('.officerold', '.officernew', '.officer__card-item').init();
+
+    new Form().init();
+
+    new Mask('input[name="phone"]').init();
 });
