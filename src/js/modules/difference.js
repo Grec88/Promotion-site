@@ -5,8 +5,10 @@ export class Difference {
         this.items = items;
         this.oldCounter = 0;
         this.newCounter = 0;
-        this.oldCards = this.oldOfficer.querySelectorAll(items);
-        this.newCards = this.newOfficer.querySelectorAll(items);
+        if (this.oldOfficer && this.newOfficer) {
+            this.oldCards = this.oldOfficer.querySelectorAll(items);
+            this.newCards = this.newOfficer.querySelectorAll(items);
+        }
         this.officers = [this.oldOfficer, this.oldCounter, this.oldCards,
         this.newOfficer, this.newCounter, this.newCards];
     };
@@ -34,11 +36,13 @@ export class Difference {
     };
 
     init() {
+        if (this.oldOfficer && this.newOfficer && this.items) {
 
-        for (let i = 0; i < this.officers.length; i++) {
-            if (i === 0 || i === 3) {
-                this.hideItems(this.officers[i + 2]);
-                this.bindTriggers(this.officers[i], this.officers[i + 1], this.officers[i + 2]);
+            for (let i = 0; i < this.officers.length; i++) {
+                if (i === 0 || i === 3) {
+                    this.hideItems(this.officers[i + 2]);
+                    this.bindTriggers(this.officers[i], this.officers[i + 1], this.officers[i + 2]);
+                }
             }
         }
     }
