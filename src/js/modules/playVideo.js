@@ -11,7 +11,7 @@ export class VideoPlayer {
             if (document.querySelector('.module__video-item')) {
                 const blockedElem = button.closest('.module__video-item').nextElementSibling;
 
-                if (i % 2 == 0) {
+                if (i % 2 === 0) {
                     blockedElem.setAttribute('data-disabled', 'true');
                 }
             }
@@ -59,8 +59,7 @@ export class VideoPlayer {
             const blockedElem = this.activeButton.closest('.module__video-item').nextElementSibling;
             const playButton = this.activeButton.querySelector('svg').cloneNode(true);
 
-            if (state.data === 0) {
-                if (blockedElem.querySelector('.play__circle').classList.contains('closed')) {
+            if (state.data === 0 && blockedElem.querySelector('.play__circle').classList.contains('closed')) {
                     blockedElem.querySelector('.play__circle').classList.remove('closed');
                     blockedElem.querySelector('svg').remove();
                     blockedElem.querySelector('.play__circle').appendChild(playButton);
@@ -70,7 +69,6 @@ export class VideoPlayer {
                     blockedElem.style.filter = 'none';
 
                     blockedElem.setAttribute('data-disabled', 'false');
-                }
             }
         }
     }
