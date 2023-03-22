@@ -5,7 +5,9 @@ export class Accordion {
     }
 
     bindTriggers() {
-        if (this.textButtons && this.downloadButtons) {
+        if (!(this.textButtons && this.downloadButtons)) {
+            return ;
+        }
             this.textButtons.forEach(textButton => {
                 textButton.addEventListener('click', (e) => {
                     const textElem = e.target.closest(".module__info-show").nextElementSibling;
@@ -36,7 +38,6 @@ export class Accordion {
                         })
                 })
             })
-        }
     }
 
     init() {
