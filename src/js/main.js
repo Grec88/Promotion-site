@@ -1,4 +1,4 @@
-import { MainSlider, MiniSlider, VideoPlayer, Difference, Form, Mask } from "./modules";
+import { MainSlider, MiniSlider, VideoPlayer, Difference, Form, Mask, Accordion} from "./modules";
 
 window.addEventListener('DOMContentLoaded', () => {
     const slider = new MainSlider({ container: '.page', buttons: ".next", logoButtons: ".sidecontrol > a" });
@@ -11,8 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     modulesSlide.render();
 
-    new VideoPlayer('.showup .play', '.overlay').init();
-    new VideoPlayer('.module__video-item .play', '.overlay').init();
+    const player = new VideoPlayer('.showup .play', '.overlay');
+    player.init();
 
     const showUpSlider = new MiniSlider({
         container: '.showup__content-slider',
@@ -46,4 +46,6 @@ window.addEventListener('DOMContentLoaded', () => {
     new Form().init();
 
     new Mask('input[name="phone"]').init();
+
+    new Accordion('.plus__content', '.download').init();
 });
